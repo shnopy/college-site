@@ -128,9 +128,18 @@
         GetImage();
       }
 
-      setTimeout(() => {
-        SetImage(images[0]);
-      }, 500);
+      function checkImageExists() {
+        setTimeout(() => {
+          if (!images[0]) {
+            checkImageExists();
+          } else {
+            SetImage(images[0]);
+          }
+        }, 300);
+      }
+
+      checkImageExists();
+
       setInterval(() => {
         SetSlogan(slogans[Math.floor(Math.random() * slogans.length)]);
       }, 5000);
