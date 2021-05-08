@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../private/css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Bangers"
+    />
+  </head>
+
+  <body>
+    <div id="container">
+      <header-custom></header-custom>
+
+      <div id="content">
+        <div class="flex-row flex-centre" id="image-slideshow">
+          <a onclick="BackImage()">
+            <img
+              class="cursor-pointer"
+              src="https://i.imgur.com/DHN7q5j.png"
+              alt="Left arrow"
+              height="50"
+              width="auto"
+            />
+          </a>
+
+          <img
+            id="slideshow-image"
+            src=""
+            alt="Stock image"
+            height="500"
+            width="auto"
+          />
+
+          <a onclick="ForwardImage()">
+            <img
+              class="cursor-pointer"
+              src="https://i.imgur.com/IppaoYY.png"
+              alt="Right arrow"
+              height="50"
+              width="auto"
+            />
+          </a>
+
+          <div id="slogan" class="centre">
+            <a href="about.html">Hey! Have you tried Pumping Iron?</a>
+          </div>
+        </div>
+
+        <div class="flex-column left margin">
+          <h1 class="centre">Pumping Iron</h1>
+          <h3 class="centre">Basic information</h3>
+          <p>
+            Commodo consectetur eiusmod enim velit sint magna fugiat est in
+            officia ut sunt fugiat. Consequat laborum pariatur minim magna
+            proident do pariatur. Laboris irure cupidatat eiusmod ullamco labore
+            laborum cupidatat eiusmod ipsum do dolore eu. Laborum ut ea sint
+            excepteur consectetur ea. Excepteur irure nulla velit id eiusmod. Ex
+            laborum minim cillum sunt velit eu nisi. Pariatur anim labore
+            deserunt elit aliqua do elit consequat incididunt fugiat mollit non.
+            Esse mollit aliquip nostrud
+          </p>
+          <p>
+            id amet sint nisi laborum irure nulla. Ex magna cupidatat veniam
+            aliqua nulla aliqua aute deserunt qui officia in eiusmod. Veniam
+            laboris ut eiusmod cillum esse proident. Ex consectetur sunt
+            excepteur enim eu irure. Cupidatat magna eiusmod ea aliqua anim duis
+            aliquip Lorem quis aliqua aliquip nisi mollit Lorem. Ut minim
+            exercitation id enim dolore. Aute laboris in pariatur sunt
+            incididunt labore laboris deserunt anim ut ex eu. Ullamco do cillum
+            amet qui reprehenderit. Consectetur ut adipisicing amet ea do velit
+            consectetur do ipsum dolor.
+          </p>
+        </div>
+      </div>
+      <footer-custom></footer-custom>
+    </div>
+
+    <script src="../private/elements/box.js"></script>
+
+    <script src="../private/elements/header/header.js"></script>
+    <script src="../private/elements/header/headerlink.js"></script>
+
+    <script src="../private/elements/footer/footer.js"></script>
+    <script src="../private/elements/footer/textlink.js"></script>
+
+    <script src="../private/elements/imagebutton.js"></script>
+
+    <script>
+      let lastIndex = 0;
+      const images = [];
+      const slogans = [
+        "Do it with Pumping Iron!",
+        "Be alive with Pumping Iron!",
+        "Pumping Iron - what more could you want?",
+        "Pumping Iron is the best, forget the rest!",
+        "Feel it - Pumping Iron!",
+        "Hey! Have you tried Pumping Iron?",
+      ];
+
+      function SetImage(src) {
+        document.getElementById("slideshow-image").src = src;
+      }
+
+      function SetSlogan(text) {
+        document.getElementById("slogan").children[0].innerText = text;
+      }
+
+      function GetImage() {
+        fetch("https://picsum.photos/1920/1080").then((res) => {
+          AddImage(res.url);
+        });
+      }
+
+      function AddImage(img) {
+        if (images.length > 5) {
+          images.shift();
+        }
+
+        images.push(img);
+      }
+
+      for (let i = 0; i < 5; i++) {
+        GetImage();
+      }
+
+      setTimeout(() => {
+        SetImage(images[0]);
+      }, 500);
+      setInterval(() => {
+        SetSlogan(slogans[Math.floor(Math.random() * slogans.length)]);
+      }, 5000);
+
+      function ForwardImage() {
+        lastIndex++;
+
+        if (lastIndex >= images.length) lastIndex = 0;
+
+        if (images[lastIndex]) SetImage(images[lastIndex]);
+      }
+
+      function BackImage() {
+        lastIndex--;
+
+        if (lastIndex <= -1) lastIndex = images.length - 1;
+        if (images[lastIndex]) SetImage(images[lastIndex]);
+      }
+    </script>
+  </body>
+</html>

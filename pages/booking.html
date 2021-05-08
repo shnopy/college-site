@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../private/css/styles.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <header-custom></header-custom>
+      <div id="content">
+        <div class="flex-row" id="payment-form-div">
+          <form method="POST" id="payment-form">
+            <fieldset>
+              <legend>Pay by card</legend>
+              <div class="flex-row flex-centre" id="payment-form-icons">
+                <img src="https://i.imgur.com/Aomnls1.png" class="icon" />
+                <img src="https://i.imgur.com/HgHjZ8n.png" class="icon" />
+              </div>
+
+              <div class="flex-row flex-centre" id="payment-form-inputs">
+                <input type="text" placeholder="Name on card" />
+                <input type="number" placeholder="Card number" maxlength="16" />
+                <input
+                  type="number"
+                  placeholder="CVV"
+                  maxlength="3"
+                  pattern="\d\d\d"
+                  id="payment-form-inputs-ccv"
+                />
+                <input type="date" />
+              </div>
+
+              <div class="flex-row flex-centre">
+                <button
+                  type="submit"
+                  id="payment-form-submit"
+                  class="button-light"
+                >
+                  Make payment
+                </button>
+                <p>
+                  To view how your data is going to be used please view the
+                  <a href="privacy.html">Privacy Policy</a>
+                </p>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="flex-row flex-centre">
+          <div class="flex-column flex-centre" id="booking-page-calendar">
+            <h3>Calendar</h3>
+            <iframe
+              width="100%"
+              height="500"
+              src="https://outlook.office365.com/owa/calendar/a519a538214e42ce98ae62506b46c743@stu.chichester.ac.uk/2bf0c888b16a4472bef71cbd3d6860e316535712907756338542/calendar.html"
+            ></iframe>
+          </div>
+        </div>
+        <h2>Products and Services</h2>
+        <div class="flex-row" id="booking-page-productlist"></div>
+      </div>
+      <footer-custom></footer-custom>
+    </div>
+
+    <script>
+      for (let i = 0; i < 4; i++) {
+        let ctx = document.getElementById("booking-page-productlist");
+        let el = document.createElement("page-product");
+        el.setAttribute("title", `Product ${i + 1}`);
+        el.setAttribute(
+          "content",
+          `
+          <img src='https://picsum.photos/852/480' alt='product image'>
+          <p>
+            Mollit esse commodo aliqua eu irure occaecat proident.Commodo veniam dolor eiusmod est et ipsum esse ullamco.
+          </p>
+          `
+        );
+
+        ctx.appendChild(el);
+      }
+    </script>
+
+    <script src="../private/elements/box.js"></script>
+
+    <script src="../private/elements/header/header.js"></script>
+    <script src="../private/elements/header/headerlink.js"></script>
+
+    <script src="../private/elements/footer/footer.js"></script>
+    <script src="../private/elements/footer/textlink.js"></script>
+
+    <script src="../private/elements/booking/product.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../private/css/styles.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <header-custom></header-custom>
+
+      <div id="content">
+        <div class="flex-column left margin">
+          <h1 class="centre">Contact us</h1>
+          <p>
+            Nisi dolore dolor quis occaecat voluptate anim eu laboris labore.
+            Nostrud nulla amet eu velit commodo laboris pariatur aliqua excepteur.
+            Nisi elit magna excepteur qui dolor enim ipsum sunt irure velit
+            deserunt. Est cupidatat est laborum in dolor id occaecat pariatur. Irure
+          </p>
+          <p>
+            consequat dolore irure adipisicing dolor occaecat. Laboris in elit eu
+            commodo. Quis aute labore laboris nisi velit exercitation anim consequat
+            veniam. Voluptate culpa non pariatur officia ut reprehenderit. Ex nisi
+            proident deserunt duis laboris do exercitation cillum culpa. Incididunt
+            aute proident sit elit enim. Proident minim ut aliqua mollit
+            exercitation anim velit amet exercitation sint. Adipisicing anim
+            voluptate sit fugiat dolor minim ex reprehenderit. Nisi duis dolor sit
+            quis veniam sunt sit aliqua quis irure labore nisi occaecat tempor.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="centre">Contact</h1>
+          <form class="margin centre" id="contact-form" method="POST">
+            <input
+              type="text"
+              id="nameinput"
+              minlength="5"
+              name="name"
+              autocapitalize="words"
+              placeholder="First and last name"
+              autocomplete="off"
+              pattern="\w+ \w+"
+              required
+            />
+
+            <input
+              type="tel"
+              id="phoneinput"
+              maxlength="12"
+              name="phonenumber"
+              placeholder="Phone number (UK only)"
+              autocomplete="off"
+              pattern="[0]{1}[1-9]{11}"
+              required
+            />
+
+            <textarea
+              type="text"
+              placeholder="Feedback"
+              id="contact-form-body"
+              minlength="50"
+              maxlength="1000"
+              rows="25"
+              name="formbody"
+              autocapitalize="on"
+              autocomplete="off"
+              required
+            ></textarea>
+
+            <button type="submit">Send Form</button>
+          </form>
+        </div>
+      </div>
+      <footer-custom></footer-custom>
+    </div>
+
+    <script src="../private/elements/box.js"></script>
+
+    <script src="../private/elements/header/header.js"></script>
+    <script src="../private/elements/header/headerlink.js"></script>
+
+    <script src="../private/elements/footer/footer.js"></script>
+    <script src="../private/elements/footer/textlink.js"></script>
+
+    <script src="../private/elements/imagebutton.js"></script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../private/css/styles.css" />
+  </head>
+
+  <body>
+    <div id="container">
+      <header-custom></header-custom>
+      <div id="content">
+        <div class="flex-row space-evenly">
+          <div>
+            <form id="sign-in-form" method="POST">
+              <fieldset>
+                <legend>Sign in / Sign up</legend>
+                <div class="flex-row centre" id="sign-in-labels">
+                  <div class="flex-row y-centre">
+                    <img
+                      src="https://i.imgur.com/iA52fks.png"
+                      width="auto"
+                      height="15"
+                    />
+                  </div>
+
+                  <button class="button-light" type="submit">
+                    Sign in with Google
+                  </button>
+
+                  <div class="flex-row y-centre">
+                    <img
+                      src="https://i.imgur.com/FMy0RBW.png"
+                      width="auto"
+                      height="18"
+                    />
+                  </div>
+
+                  <button class="button-light" type="submit">
+                    Sign in with Facebook
+                  </button>
+                </div>
+
+                <div id="sign-in-inputs" class="flex-row centre">
+                  <input type="text" placeholder="Username" required />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    minlength="6"
+                    maxlength="24"
+                    required
+                  />
+
+                  <flex-break></flex-break>
+
+                  <div class="flex-row y-centre">
+                    <label id="dob-label">Date of birth</label>
+                    <input type="date" required />
+                  </div>
+
+                  <flex-break></flex-break>
+
+                  <div class="flex-row space-evenly">
+                    <label>Remember me</label>
+                    <input type="checkbox" required />
+                    <button
+                      type="submit"
+                      class="button-light"
+                      id="sign-in-button"
+                    >
+                      Sign in / Sign up
+                    </button>
+                  </div>
+                </div>
+
+                <div class="flex-row centre">
+                  <p>
+                    To see how your data is being used please see the
+                    <a href="privacy.html">Privacy Policy</a>
+                  </p>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer-custom></footer-custom>
+    </div>
+
+    <script src="../private/elements/box.js"></script>
+
+    <script src="../private/elements/header/header.js"></script>
+    <script src="../private/elements/header/headerlink.js"></script>
+
+    <script src="../private/elements/footer/footer.js"></script>
+    <script src="../private/elements/footer/textlink.js"></script>
+
+    <script src="../private/elements/imagebutton.js"></script>
+  </body>
+</html>
