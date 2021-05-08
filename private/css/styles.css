@@ -348,6 +348,7 @@ body div#payment-form-div {
 body div#booking-page-calendar {
   width: 40%;
   height: 100%;
+  margin-left: 50%;
 }
 
 body div#booking-page-productlist {
