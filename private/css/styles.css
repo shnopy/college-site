@@ -36,6 +36,10 @@
   --header-footer-colour: rgb(68, 68, 68);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--main-font);
   background-color: rgb(38, 38, 38);
