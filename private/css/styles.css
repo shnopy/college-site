@@ -41,7 +41,7 @@ body {
   background-color: rgb(38, 38, 38);
 }
 
-body *:not(navbar-custom *) {
+body * {
   color: var(--main-font-colour);
 }
 
