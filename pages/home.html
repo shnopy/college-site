@@ -55,25 +55,16 @@
           <h1 class="centre">Pumping Iron</h1>
           <h3 class="centre">Basic information</h3>
           <p>
-            Commodo consectetur eiusmod enim velit sint magna fugiat est in
-            officia ut sunt fugiat. Consequat laborum pariatur minim magna
-            proident do pariatur. Laboris irure cupidatat eiusmod ullamco labore
-            laborum cupidatat eiusmod ipsum do dolore eu. Laborum ut ea sint
-            excepteur consectetur ea. Excepteur irure nulla velit id eiusmod. Ex
-            laborum minim cillum sunt velit eu nisi. Pariatur anim labore
-            deserunt elit aliqua do elit consequat incididunt fugiat mollit non.
-            Esse mollit aliquip nostrud
+            We're a fitness centre located just outside Scotland in Kelso town
+            centre, we aim to please with out large range of activities and our
+            multi-purpose halls that can be hired by anyone.
           </p>
           <p>
-            id amet sint nisi laborum irure nulla. Ex magna cupidatat veniam
-            aliqua nulla aliqua aute deserunt qui officia in eiusmod. Veniam
-            laboris ut eiusmod cillum esse proident. Ex consectetur sunt
-            excepteur enim eu irure. Cupidatat magna eiusmod ea aliqua anim duis
-            aliquip Lorem quis aliqua aliquip nisi mollit Lorem. Ut minim
-            exercitation id enim dolore. Aute laboris in pariatur sunt
-            incididunt labore laboris deserunt anim ut ex eu. Ullamco do cillum
-            amet qui reprehenderit. Consectetur ut adipisicing amet ea do velit
-            consectetur do ipsum dolor.
+            We have been recommended by many papers, such as The Herald and The
+            Telegraph, we host sporting events as can be seen by our
+            <a href="calendar.html">calendar</a>. These events are open to all
+            as we have two multi-purpose rooms up for hire which we also use for
+            events.
           </p>
         </div>
       </div>
@@ -92,7 +83,13 @@
 
     <script>
       let lastIndex = 0;
-      const images = [];
+      const images = [
+        "https://i.imgur.com/QSrKHSD.jpg",
+        "https://i.imgur.com/KojOdho.jpg",
+        "https://i.imgur.com/sMlMoYL.jpg",
+        "https://i.imgur.com/AbkFbn1.jpg",
+        "https://i.imgur.com/vMixUGA.jpg",
+      ];
       const slogans = [
         "Do it with Pumping Iron!",
         "Be alive with Pumping Iron!",
@@ -110,22 +107,12 @@
         document.getElementById("slogan").children[0].innerText = text;
       }
 
-      function GetImage() {
-        fetch("https://picsum.photos/1920/1080").then((res) => {
-          AddImage(res.url);
-        });
-      }
-
       function AddImage(img) {
         if (images.length > 5) {
           images.shift();
         }
 
         images.push(img);
-      }
-
-      for (let i = 0; i < 5; i++) {
-        GetImage();
       }
 
       function checkImageExists() {

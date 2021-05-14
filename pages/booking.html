@@ -61,29 +61,25 @@
           </div>
         </div>
         <h2>Products and Services</h2>
-        <div class="flex-row" id="booking-page-productlist"></div>
+        <div class="flex-row" id="booking-page-productlist">
+          <page-product
+            title="Luxury Swimming Pool"
+            content="<img src='https://i.imgur.com/KojOdho.jpg'> <p>Enjoy our new luxury swimming pool, made with modern environmentally friendly substances with almost zero plastic usage</p>"
+          ></page-product>
+
+          <page-product
+            title="Amazing Squash Courts"
+            content="<img src='https://i.imgur.com/MbgD8S1.jpg'> <p>Enjoy our amazing squash courts, they're extremely well maintained and have been features within magazines! Such as The Telegraph and The Herald</p>"
+          ></page-product>
+
+          <page-product
+            title="Extremely well kitted gym"
+            content="<img src='https://i.imgur.com/vMixUGA.jpg'> <p>Enjoy our extremely well kitted gym. Opened 2015</p>"
+          ></page-product>
+        </div>
       </div>
       <footer-custom></footer-custom>
     </div>
-
-    <script>
-      for (let i = 0; i < 4; i++) {
-        let ctx = document.getElementById("booking-page-productlist");
-        let el = document.createElement("page-product");
-        el.setAttribute("title", `Product ${i + 1}`);
-        el.setAttribute(
-          "content",
-          `
-          <img src='https://picsum.photos/852/480' alt='product image'>
-          <p>
-            Mollit esse commodo aliqua eu irure occaecat proident.Commodo veniam dolor eiusmod est et ipsum esse ullamco.
-          </p>
-          `
-        );
-
-        ctx.appendChild(el);
-      }
-    </script>
 
     <script src="../private/elements/box.js"></script>
 
