@@ -345,8 +345,8 @@ body form#payment-form button#payment-form-submit {
 }
 
 body div#payment-form-div {
+  justify-content: center;
   position: absolute;
-  left: 1%;
 }
 
 body div#booking-page-calendar {
