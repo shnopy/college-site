@@ -10,7 +10,7 @@ class Header extends HTMLElement {
         <div id="header-buttons">
           <header-link link="about" text="About"></header-link>
           <header-link link="contact" text="Contact"></header-link>
-          <header-link link="booking" text="Booking page"></header-link>
+          <header-link link="booking" text="Booking and Services"></header-link>
           <header-link link="calendar" text="Calender"></header-link>
           <header-link link="login" text="Log in / Sign up"></header-link>
           <button class="button-dark" id="scroll-top" style="visibility: hidden;"><a>Scroll to top</a></button>
